@@ -1,4 +1,5 @@
-require '../lib/account.rb'
+require './lib/account.rb'
+require 'date'
 describe Account do
   let(:person) {instance_double('Person', name: 'Thomas')}
   subject { described_class.new({owner: person}) }
@@ -25,8 +26,13 @@ describe Account do
   end
 
   it 'deactivates account using Instance method' do
-  subject.deactivate
-  expect(subject.account_status).to eq :deactivated
-end
+    subject.deactivate
+    expect(subject.account_status).to eq :deactivated
+  end
+
+  it 'is expected to have an expiry date on initialize' do
+      expected_date = Date.today.next_year(5).strftime("%m/%y")
+      expect(subject.exp_date).to eq expected_date
+  end
 
 end

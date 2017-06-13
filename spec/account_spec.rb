@@ -1,3 +1,10 @@
 require '../lib/account.rb'
 describe Account do
-  let(:account) {instance_double( pin_code: '1234', exp_date: '07/17', account_status: :active)}
+
+  it 'is expected to have a 4 digit pin number on initialize' do
+    pin_length = Math.log10(subject.pin_code).to_i + 1
+    expect(pin_length).to eq 4
+
+  end
+
+end

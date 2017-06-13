@@ -55,15 +55,15 @@ end
   def add_bills(amount)
     denominations = [20, 10, 5]
     bills = []
+
     denominations.each do |bill|
+      while amount - bill >= 0
+        amount -= bill
+        bills << bill
+      end
+    end
 
-  while amount - bill >= 0
-    amount -= bill
-    bills << bill
+    bills
   end
-  end
-  end
-
-bills
 
 end

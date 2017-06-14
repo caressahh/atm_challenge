@@ -44,7 +44,7 @@ describe Atm do
   end
 
   it 'rejects withdraw if account is disabled' do
-    allow(account).to receive(:status).and_return(:disabled)
+    allow(account).to receive(:account_status).and_return(:disabled)
     expected_output = { account_status: :disabled, message: 'Your account is disabled', date: Date.today }
   end
 end

@@ -33,6 +33,12 @@
 ```
 ```irb
     # Withdraw money from account
-    2.4.0 :007 > person.get_cash_from_atm({amount:50, account:account, atm:atm, pin: 1234})
- => {:status=>false, :message=>"insufficient funds", :date=>#<Date: 2017-06-14 ((2457919j,0s,0n),+0s,2299161j)>}
+    2.4.0 :007 > person.get_cash_from_atm({amount:50, account:account, atm:atm, pin:account.pin_code})
+    => -50
+    2.4.0 :008 > person.cash
+    => -50
+    2.4.0 :009 > account.balance
+    => 50
+    2.4.0 :010 > atm.funds
+    => 950 
  ```

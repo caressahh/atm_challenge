@@ -26,7 +26,9 @@ end
   private
 
 def fail_message(message)
-  { status: false, message: message, date: Date.today }
+  { status: false,
+    message: message,
+    date: Date.today }
 end
   def card_expired?(exp_date)
     Date.strptime(exp_date, '%m/%y') < Date.today
@@ -52,7 +54,11 @@ end
       @funds -= amount
 
       account.balance = account.balance - amount
-      { status: true, message: 'success', date: Date.today, amount:amount, bills: add_bills(amount)}
+      { status: true,
+        message: 'success',
+        date: Date.today,
+        amount:amount,
+        bills: add_bills(amount)}
   end
 
   def add_bills(amount)

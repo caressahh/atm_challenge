@@ -5,7 +5,6 @@ class Person
   def initialize(attrs = {})
     @name = set_name(attrs[:name])
     @cash = 0
-    @account = nil
   end
 
   def create_account
@@ -16,7 +15,7 @@ class Person
    @account == nil ? missing_account : deposit_funds(amount)
  end
 
- def withdraw(args = {})
+ def get_cash_from_atm(args = {})
    @account == nil ? missing_account : withdraw_funds(args)
  end
  private
@@ -40,18 +39,18 @@ def increase_cash(response)
 end
 
 def set_name(name)
-  name == nil ? missing_name : name
+  name.nil? ? missing_name : name
 end
 
 def missing_name
-  raise ArgumentError, 'A name is required'
+  raise 'A name is required'
 end
 
 def missing_account
-  raise RuntimeError, 'No account present'
+  raise 'No account present'
 end
 
 def missing_atm
-  raise RuntimeError, 'An ATM is required'
+  raise 'An ATM is required'
 end
 end

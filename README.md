@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-**Open irb, in terminal, and insert these commands:**
+**Open irb, in terminal, and run the following commands:**
 
     2.4.0 :001 > load './lib/atm.rb'
      => true 

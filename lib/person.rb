@@ -1,4 +1,4 @@
-require 'account'
+require './lib/account.rb'
 class Person
   attr_accessor :name, :cash, :account
 

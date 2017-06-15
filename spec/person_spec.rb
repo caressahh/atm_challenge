@@ -50,15 +50,15 @@ describe Person do
 
     it 'can withdraw funds' do
       command = -> { subject.get_cash_from_atm(amount: 100,
-        pin: subject.account.pin_code,
-        account: subject.account, atm: atm) }
+      pin: subject.account.pin_code,
+      account: subject.account, atm: atm) }
       expect(command.call).to be_truthy
     end
 
     it 'withdraw is expected to raise error if no ATM is passed in' do
       command = lambda { subject.get_cash_from_atm(amount: 100,
-        pin: subject.account.pin_code,
-        account: subject.account) }
+      pin: subject.account.pin_code,
+      account: subject.account) }
       expect { command.call }.to raise_error 'An ATM is required'
     end
 
@@ -78,7 +78,7 @@ describe Person do
   describe 'can not manage funds if no account has been created' do
 
     it 'cannot deposit funds' do
-    expect { subject.deposit(100) }.to raise_error(RuntimeError, 'No account present')
+      expect { subject.deposit(100) }.to raise_error(RuntimeError, 'No account present')
     end
   end
 end

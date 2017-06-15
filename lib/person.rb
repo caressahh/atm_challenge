@@ -4,7 +4,7 @@ class Person
 
   def initialize(attrs = {})
     @name = set_name(attrs[:name])
-    @cash = 0
+    @cash = 100
   end
 
   def create_account

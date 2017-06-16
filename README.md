@@ -33,7 +33,7 @@
 ```
 ```irb
     # Withdraw money from account
-    2.4.0 :007 > person.get_cash_from_atm({amount:50, account:account, atm:atm, pin:'8905'}) # enter the password given to you after creating an account.
+    2.4.0 :007 > person.get_cash_from_atm({amount:50, account:account, atm:atm, pin:'8905'}) # enter the pin code given to you after creating an account.
     => 50
     2.4.0 :008 > person.cash
     => 50

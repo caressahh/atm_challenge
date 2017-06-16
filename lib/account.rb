@@ -21,7 +21,7 @@ class Account
 
   private
   def generate_pin
-    rand(1000..9999)
+    rand(1000..9999).to_s
   end
 
   def set_owner(obj)
